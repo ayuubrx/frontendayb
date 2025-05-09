@@ -1,0 +1,44 @@
+.role-list {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.role-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #1a237e;
+}
+
+.role-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.role-table th,
+.role-table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.role-table thead {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.role-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.role-table td {
+  font-size: 1rem;
+  color: #333;
+}
+
+.empty-state {
+  font-style: italic;
+  color: #999;
+}

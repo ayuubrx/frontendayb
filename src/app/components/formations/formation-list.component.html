@@ -1,0 +1,17 @@
+<section class="formation-list">
+  <h2> Liste des formations</h2>
+
+  <div *ngIf="formations.length === 0" class="empty">
+    <p>Aucune formation disponible pour le moment.</p>
+    <img src="assets/empty.svg" alt="Vide" class="empty-img" />
+  </div>
+
+  <div class="cards" *ngIf="formations.length > 0">
+    <div class="formation-card" *ngFor="let f of formations">
+      <h3>{{ f.titre }}</h3>
+      <p>{{ f.description }}</p>
+      <span class="badge">{{ f.niveau }}</span>
+      <button class="btn">Voir les détails</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+<div class="profile-container">
+  <section class="profile-card">
+    <h2>Personal details</h2>
+    <div class="profile-header">
+      <div class="profile-photo">
+        <!-- Affichage de la photo ou avatar -->
+        <img *ngIf="user.photo" [src]="user.photo" alt="Photo de profil" />
+        <div *ngIf="!user.photo" class="avatar">{{ user.initials }}</div>
+
+        <!-- Champ fichier caché -->
+        <input type="file" #photoInput accept="image/*" (change)="onPhotoSelected($event)" hidden />
+
+        <!-- Bouton de changement de photo -->
+        <button class="btn-outline" (click)="triggerPhotoUpload()">Update profile picture</button>
+      </div>
+
+      <div>
+        <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+        <button class="btn">🔗 Share profile link</button>
+        <p><a href="#" (click)="toggleVisibility()">Update profile visibility</a></p>
+        <p *ngIf="!user.profileVisible" class="hidden-note">Profil non visible</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience-section">
+    <h2>Experience</h2>
+
+    <div class="experience-card">
+      <h3>Projects</h3>
+      <p class="subtext">Showcase your skills to recruiters with job-relevant projects</p>
+      <p>Add projects here to demonstrate your technical expertise...</p>
+      <a href="#">Browse Projects</a>
+    </div>
+
+    <div class="experience-card">
+      <h3>Work history</h3>
+      <p>Add your past work experience here...</p>
+      <button class="btn-outline">+ Add work experience</button>
+    </div>
+  </section>
+</div>
+
+<!-- 🔒 Modale de visibilité -->
+<div class="modal-backdrop" *ngIf="showVisibilityModal">
+  <div class="modal">
+    <h3>Profile visibility and privacy settings</h3>
+    <p>
+      Sharing your profile is a great way to stand out by showcasing your
+      skills and accomplishments on E-Learn.
+    </p>
+
+    <label class="checkbox">
+      <input
+        type="checkbox"
+        [checked]="user.profileVisible"
+        (change)="onCheckboxChange($event)"
+
+      />
+      <strong>Anyone with my link</strong>
+      <p class="checkbox-desc">
+        Anyone who has the link to your profile can view it (but it won’t appear
+        as a result on search engines).
+      </p>
+    </label>
+
+    <div class="modal-actions">
+      <button class="btn" (click)="closeModal()">Done</button>
+    </div>
+  </div>
+</div>

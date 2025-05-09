@@ -1,0 +1,19 @@
+<section class="resultat-list">
+  <h2> Résultats des quizz</h2>
+  <table class="resultat-table">
+    <thead>
+    <tr>
+      <th> Étudiant</th>
+      <th> Quiz</th>
+      <th> Note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let r of resultats">
+      <td>{{ r.etudiant }}</td>
+      <td>{{ r.quiz }}</td>
+      <td>{{ r.note }} / {{ r.sur }}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
