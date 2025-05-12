@@ -1,5 +1,8 @@
-<header>
-</header>
-<main>
+<app-navbar *ngIf="!isHomePage"></app-navbar>
+
+<main [ngClass]="{ 'main-content': !isHomePage }">
   <router-outlet></router-outlet>
 </main>
+
+<app-footer></app-footer>
+

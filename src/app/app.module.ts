@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 
 import { FormationListComponent } from './components/formations/formation-list.component';
 import { FormationDetailComponent } from './components/formations/formation-detail.component';
-import { RapportListComponent } from './components/rapport//rapport-list.component';
+import { RapportEtuListComponent } from './components/rapport/rapport-etu-list.component';
 import { RapportService } from './services/rapport.service';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { RapportService } from './services/rapport.service';
     AppComponent,
     FormationListComponent,
     FormationDetailComponent,
-    RapportListComponent
+    RapportEtuListComponent
   ],
   providers: [RapportService],
   imports: [

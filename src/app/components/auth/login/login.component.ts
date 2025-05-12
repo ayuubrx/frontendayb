@@ -1,15 +1,14 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink, Router } from '@angular/router';
 
-// @ts-ignore
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  encapsulation: ViewEncapsulation.None  // <<< AJOUT ICI
-
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
   slogans: string[] = [
@@ -19,6 +18,8 @@ export class LoginComponent implements OnInit {
   ];
   currentSloganIndex: number = 0;
 
+  constructor(private router: Router) {}
+
   get currentSlogan(): string {
     return this.slogans[this.currentSloganIndex];
   }
@@ -27,5 +28,11 @@ export class LoginComponent implements OnInit {
     setInterval(() => {
       this.currentSloganIndex = (this.currentSloganIndex + 1) % this.slogans.length;
     }, 3000);
+  }
+
+  onLogin() {
+    // Authentification simulée — à remplacer avec un vrai service
+    localStorage.setItem('token', 'true');
+    this.router.navigate(['/formations']);
   }
 }

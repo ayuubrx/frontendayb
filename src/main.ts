@@ -1,16 +1,15 @@
-// src/main.ts
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { importProvidersFrom } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
-import { HttpClientModule } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(HttpClientModule),
-    provideRouter(routes)
+    provideHttpClient(withFetch()), // ✅ utilise l’API Fetch moderne
+    provideRouter(routes),
+    provideAnimations()
   ]
-})
-  .catch(err => console.error(err));
+}).catch(err => console.error(err));

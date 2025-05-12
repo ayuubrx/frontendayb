@@ -1,97 +1,27 @@
+/* === Profil Component Styles === */
+
 .profile-container {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .profile-card,
 .experience-card {
   background: #f9f9f9;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .profile-header {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
-.avatar {
-  background-color: #88b04b;
-  color: white;
-  font-size: 2rem;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.btn {
-  background-color: #2d80f4;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.btn-outline {
-  border: 1px solid #2d80f4;
-  background: none;
-  color: #2d80f4;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.subtext {
-  font-weight: bold;
-  color: #444;
-}
-
-/* --- Modal --- */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 400px;
-  max-width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
-
-.checkbox {
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.subnote {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
 .profile-photo {
   display: flex;
   flex-direction: column;
@@ -112,8 +42,132 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  border: 2px solid #ddd;
 }
 
-.profile-photo img {
-  border: 2px solid #ddd;
+.btn,
+.btn-outline {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background-color: #2979ff;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #1565c0;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2979ff;
+  color: #2979ff;
+}
+
+.btn-outline:hover {
+  background-color: #e3f2fd;
+}
+
+.experience-section h2,
+.profile-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.experience-card h3 {
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.subtext {
+  font-weight: 600;
+  color: #777;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.checkbox {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.checkbox-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+.modal-actions {
+  text-align: right;
+}
+.skills-section {
+  margin-top: 2rem;
+}
+
+.skills-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-list li {
+  background-color: #e0f0ff;
+  color: #004080;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+.profile-card,
+.experience-card,
+.skills-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover,
+.experience-card:hover,
+.skills-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }

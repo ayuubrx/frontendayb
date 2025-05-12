@@ -19,7 +19,8 @@ export class ProfilComponent {
     initials: 'A',
     profileVisible: true,
     shareLink: 'https://elearn.com/profil/ayoub',
-    photo: ''
+    photo: '',
+    skills: ['Angular', 'TypeScript', 'UI/UX Design']  // ← Exemple
   };
 
   showVisibilityModal = false;
@@ -53,5 +54,12 @@ export class ProfilComponent {
     const input = event.target as HTMLInputElement;
     this.user.profileVisible = input.checked;
   }
+  addSkill(): void {
+    const newSkill = prompt('Entrez une nouvelle compétence :');
+    if (newSkill) {
+      this.user.skills.push(newSkill.trim());
+    }
+  }
+
 
 }

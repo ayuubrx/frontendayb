@@ -1,17 +1,35 @@
-<section class="formation-list">
-  <h2> Liste des formations</h2>
+<section class="intro-video-section">
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="/formationvideo1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
 
-  <div *ngIf="formations.length === 0" class="empty">
+
+<section class="formation-list">
+  <h2 class="section-title">Nos formations interactives</h2>
+
+  <div *ngIf="formations.length === 0" class="empty-state">
     <p>Aucune formation disponible pour le moment.</p>
-    <img src="assets/empty.svg" alt="Vide" class="empty-img" />
+    <img src="erreurformation.png" alt="Illustration d'absence de formation" class="empty-img" />
   </div>
 
   <div class="cards" *ngIf="formations.length > 0">
-    <div class="formation-card" *ngFor="let f of formations">
-      <h3>{{ f.titre }}</h3>
-      <p>{{ f.description }}</p>
-      <span class="badge">{{ f.niveau }}</span>
-      <button class="btn">Voir les détails</button>
-    </div>
+    <article class="formation-card" *ngFor="let f of formations">
+      <div class="card-content">
+        <div class="card-left">
+          <span class="badge">{{ f.niveau }}</span>
+          <h3 class="formation-title">{{ f.titre }}</h3>
+          <p class="description">{{ f.description }}</p>
+          <button class="btn-primary" [routerLink]="['/formations', f.id]">Voir les détails</button>
+        </div>
+        <div class="card-right">
+          <img src="/4955888-removebg-preview.png" alt="Formation" class="illustration" />
+        </div>
+      </div>
+    </article>
   </div>
+
 </section>

@@ -21,13 +21,10 @@
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #00e0ff, #6e00ff);
+  background: linear-gradient(to right, #00e0ff, #6e00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
-  display: inline-block;
 }
-
 
 .auth-button {
   padding: 0.75rem;
