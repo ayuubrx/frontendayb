@@ -1,0 +1,17 @@
+<section class="formation-detail" *ngIf="formation">
+  <div class="detail-header">
+    <h2>{{ formation.title }}</h2>
+    <span class="badge">{{ formation.niveau }}</span>
+  </div>
+
+  <p class="description">{{ formation.description }}</p>
+
+  <div class="video-preview" *ngIf="formation.videoUrl">
+    <video controls class="video-player">
+      <source [src]="formation.videoUrl" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <button class="btn">Commencer la formation</button>
+</section>
